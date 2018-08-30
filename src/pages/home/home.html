@@ -30,14 +30,14 @@
               I say hello
             </ion-col>
             <ion-col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2>
-              back
+              <button (click)="Back()">back</button>
             </ion-col>
           </ion-row>
     </ion-grid>
     <ion-grid class="grid-images">
       <ion-row>
         <ion-col *ngFor="let item of items" col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-            <img src="assets/imgs/images/{{item.ID|lowercase}}.jpg" (click)="say(item.item_name)"/>
+            <img src="assets/imgs/images/{{item.ID|lowercase}}.jpg" (click)="say(item.item_name,item.screen_name)"/>
            </ion-col>
          </ion-row>
     </ion-grid>

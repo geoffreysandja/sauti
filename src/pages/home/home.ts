@@ -10,9 +10,11 @@ import { Storage } from '@ionic/storage';
 export class HomePage {
   items:any;
   all_items:any;
+  stack_item:any;
   constructor(public navCtrl: NavController,public tts: TextToSpeech,public api:ApiProvider,public storage:Storage) {
     this.items=[];
     this.all_items=[];
+    this.stack_item=[];
     this.api.getItemsByScreen('First').then((val)=>{
       console.log('first');
       console.log(val);
@@ -44,21 +46,28 @@ export class HomePage {
     });
    
   }
-  populateGrid(item_name){
+  populateGrid(item_name,screen_name,is_back){
     console.log('item name:'+item_name);
     for(var i=0;i<this.all_items.length;i++){
       if(this.all_items[i][item_name]){
         this.items=this.all_items[i][item_name];
+        if(is_back==false){
+          this.stack_item.push(screen_name);
+        }
         console.log(this.all_items[i][item_name])
         break;
       }
     }
   }
-  say(name){
+  Back(){
+    var screen_name=this.stack_item.pop();
+    this.populateGrid(screen_name,"",true);
+  }
+  say(name,screen){
     this.tts.speak(name)
     .then(() => console.log('Success'))
     .catch((reason: any) => console.log(reason));
-    this.populateGrid(name);
+    this.populateGrid(name,screen,false);
   }
 
 }
