@@ -9,8 +9,10 @@ import { Storage } from '@ionic/storage';
 })
 export class HomePage {
   items:any;
+  all_items:any;
   constructor(public navCtrl: NavController,public tts: TextToSpeech,public api:ApiProvider,public storage:Storage) {
     this.items=[];
+    this.all_items=[];
     this.api.getItemsByScreen('First').then((val)=>{
       console.log('first');
       console.log(val);
@@ -24,10 +26,12 @@ export class HomePage {
           this.storage.set('items',data);
           console.log('NEW');
           console.log(data);
+          this.all_items=data;
         }).catch(error=>console.log(error));
       }else{
         console.log('OLD');
         console.log(val);
+        this.all_items=val;
       }
     }).catch((error)=>{
       console.log(error);
@@ -35,14 +39,26 @@ export class HomePage {
         this.storage.set('items',data);
         console.log('NEW');
         console.log(data);
+        this.all_items=data;
       }).catch(error=>console.log(error));
     });
    
+  }
+  populateGrid(item_name){
+    console.log('item name:'+item_name);
+    for(var i=0;i<this.all_items.length;i++){
+      if(this.all_items[i][item_name]){
+        this.items=this.all_items[i][item_name];
+        console.log(this.all_items[i][item_name])
+        break;
+      }
+    }
   }
   say(name){
     this.tts.speak(name)
     .then(() => console.log('Success'))
     .catch((reason: any) => console.log(reason));
+    this.populateGrid(name);
   }
 
 }
