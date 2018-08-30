@@ -36,38 +36,10 @@
     </ion-grid>
     <ion-grid class="grid-images">
       <ion-row>
-        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-            <img src="assets/imgs/images/b30101.jpg" (click)="say('hello')"/>
+        <ion-col *ngFor="let item of items" col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+            <img src="assets/imgs/images/{{item.ID|lowercase}}.jpg" (click)="say(item.item_name)"/>
            </ion-col>
-           <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-              <img src="assets/imgs/images/b30102.jpg"/>
-           </ion-col>
-           <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-              <img src="assets/imgs/images/b30103.jpg"/>
-           </ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-                  <img src="assets/imgs/images/b30104.jpg"/>
-                 </ion-col>
-                 <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-                    <img src="assets/imgs/images/b30105.jpg"/>
-                 </ion-col>
-                 <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-                    <img src="assets/imgs/images/b30106.jpg"/>
-                 </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-                        <img src="assets/imgs/images/b30107.jpg"/>
-                       </ion-col>
-                       <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-                          <img src="assets/imgs/images/b30108.jpg"/>
-                       </ion-col>
-                       <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-                          <img src="assets/imgs/images/b30109.jpg"/>
-                       </ion-col>
-                      </ion-row>                
+         </ion-row>
     </ion-grid>
 
   
