@@ -13,7 +13,7 @@
             Sauti
           </ion-col>
           <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-            say hello
+         
           </ion-col>
           <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
 
@@ -24,20 +24,33 @@
     <ion-grid>
         <ion-row>
             <ion-col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2>
-             Home
+              <img src="assets/imgs/icons/home.png" class="icon"/>
+              <img src="assets/imgs/icons/refresh.png" class="icon"/>
             </ion-col>
             <ion-col col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8>
-              I say hello
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+                    <img class="img-grid-sentence" src="assets/imgs/images/b30101.jpg"/>
+                  </ion-col>
+                  <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+                    <img class="img-grid-sentence" src="assets/imgs/images/b30102.jpg"/>
+                  </ion-col>
+                  <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+                    <img class="img-grid-sentence" src="assets/imgs/images/b30103.jpg"/>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
             </ion-col>
             <ion-col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2>
-              <button (click)="Back()">back</button>
+              <img class="icon" src="assets/imgs/icons/back.png" (click)="Back()" />
             </ion-col>
           </ion-row>
     </ion-grid>
     <ion-grid class="grid-images">
       <ion-row>
         <ion-col *ngFor="let item of items" col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-            <img src="assets/imgs/images/{{item.ID|lowercase}}.jpg" (click)="say(item.item_name,item.screen_name)"/>
+            <img class="img-grid" src="assets/imgs/images/{{item.ID|lowercase}}.jpg" (click)="say(item.item_name,item.screen_name)"/>
            </ion-col>
          </ion-row>
     </ion-grid>
