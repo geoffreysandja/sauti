@@ -11,10 +11,16 @@ export class HomePage {
   items:any;
   all_items:any;
   stack_item:any;
+  selected_subject:any;
+  selected_verb:any;
+  selected_complement:any;
   constructor(public navCtrl: NavController,public tts: TextToSpeech,public api:ApiProvider,public storage:Storage) {
     this.items=[];
     this.all_items=[];
     this.stack_item=[];
+    this.selected_subject="assets/imgs/icons/select.png";
+    this.selected_verb="assets/imgs/icons/select.png";
+    this.selected_complement="assets/imgs/icons/select.png";
     this.api.getItemsByScreen('First').then((val)=>{
       console.log('first');
       console.log(val);
