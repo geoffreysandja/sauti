@@ -37,16 +37,16 @@
                     <ion-grid>
                       <ion-row>
                           <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
-                              <img src="{{selected_subject}}"/>
+                              <img src="assets/imgs/icons/i_face.png"/>
                           </ion-col>
                           <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
-                              <img src="{{selected_verb}}"/>
+                              <img (click)="clearVerb()" src="{{selected_verb}}"/>
                           </ion-col>
                           <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
-                              <img src="{{selected_complement}}"/>
+                              <img (click)="clearComplement()" src="{{selected_complement}}"/>
                           </ion-col>
                           <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
-                            <img src="assets/imgs/icons/repeat.png"/>
+                            <img (click)="repeat()" src="assets/imgs/icons/repeat.png"/>
                         </ion-col>                          
                         </ion-row>
                     </ion-grid>
@@ -65,7 +65,7 @@
     <ion-grid class="grid-images">
       <ion-row>
         <ion-col *ngFor="let item of items" col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
-            <img class="img-grid" src="assets/imgs/images/{{item.ID|lowercase}}.jpg" (click)="say(item.item_name,item.screen_name)"/>
+            <img class="img-grid" src="assets/imgs/images/{{item.ID|lowercase}}.jpg" (click)="say(item.item_name,item.screen_name,item.ID)"/>
            </ion-col>
          </ion-row>
     </ion-grid>
