@@ -62,6 +62,16 @@ export class HomePage {
   clearSubject(){
     this.selected_subject="i";
   }
+  addVerb(num){
+    if(num==1){
+      this.selected_verb_voice_over="want";
+      this.selected_verb="assets/imgs/icons/want.png";
+
+    }else{
+      this.selected_verb_voice_over="don't want";
+      this.selected_verb="assets/imgs/icons/dont-want.png";
+    }
+  }
   clearVerb(){
     this.selected_verb="assets/imgs/icons/select.png";
   }

@@ -9,15 +9,20 @@
 <ion-content class="back-amber" padding>
     <ion-grid>
         <ion-row>
-          <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
               <img src="assets/imgs/sauti.png" class="logo"/>
           </ion-col>
-          <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
          
           </ion-col>
-          <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
 
           </ion-col>
+
+          <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
+            <img (click)="addVerb(1)" src="assets/imgs/icons/want.png" class="icon"/>
+            <img (click)="addVerb(0)"  src="assets/imgs/icons/dont-want.png" class="icon"/>
+          </ion-col>          
         </ion-row>
       </ion-grid>
     
@@ -37,13 +42,13 @@
                     <ion-grid>
                       <ion-row>
                           <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
-                              <img src="assets/imgs/icons/i_face.png"/>
+                              <img src="assets/imgs/icons/i_face.png" class="icon"/>
                           </ion-col>
                           <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
-                              <img (click)="clearVerb()" src="{{selected_verb}}"/>
+                              <img (click)="clearVerb()" src="{{selected_verb}}" class="icon"/>
                           </ion-col>
                           <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
-                              <img (click)="clearComplement()" src="{{selected_complement}}"/>
+                              <img (click)="clearComplement()" src="{{selected_complement}}" class="icon"/>
                           </ion-col>
                           <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
                             <img (click)="repeat()" src="assets/imgs/icons/repeat.png"/>
